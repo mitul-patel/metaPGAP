@@ -34,15 +34,15 @@ Newick tools (http://cegg.unige.ch/newick_utils)<br/>
 Install metaPGAP
 ================
 
-wget https://github.com/mitul-patel/metaPGAP/archive/master.zip
-unzip metaPGAP-master && mv metaPGAP-master metaPGAP
+wget https://github.com/mitul-patel/metaPGAP/archive/master.zip<br/>
+unzip metaPGAP-master && mv metaPGAP-master metaPGAP<br/>
 
 ---------------------------------------------------
 
 Running metaPGAP
 ================
 
-cd metaPGAP
-python metaPGAP.py
+cd metaPGAP<br/>
+python metaPGAP.py<br/>
 
 ---------------------------------------------------
