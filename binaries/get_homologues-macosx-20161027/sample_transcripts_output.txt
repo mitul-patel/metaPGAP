@@ -1,0 +1,425 @@
+# ./get_homologues-est.pl -d sample_transcripts_fasta -o 0 -i 40 -e 0 -r 0 -t all -c 1 -z 1 -I 0 -m local -n 2 -M 1 -C 75 -S 95 -E 1e-05 -F 1.5 -b 0 -s 0 -D 0 -R 0 -L 0 -A 1
+
+# results_directory=/home/contrera/codigo/cvs/get_homologues-est/sample_transcripts_fasta_est_homologues
+# parameters: MAXEVALUEBLASTSEARCH=0.01 MAXPFAMSEQS=250 BATCHSIZE=100 MINSEQLENGTH=20
+
+# checking input files...
+# Esterel.trinity.fna.bz2 5892  median length = 506
+# Franka.trinity.fna.bz2 6036  median length = 523
+# Hs_Turkey-19-24.trinity.fna.bz2 6204  median length = 476
+# flcdnas_Hnijo.fna.gz 28620 [full length sequences] median length = 1504
+
+# 4 genomes, 46752 sequences
+
+# taxa considered = 4 sequences = 46752 residues = 63954041
+
+# mask=Esterel_alltaxa_algOMCL_e0_ (_algOMCL)
+
+# skipped transcriptome parsing (sample_transcripts_fasta_est_homologues/tmp/selected.genomes)
+
+# skip BLAST searches and parsing
+
+# WARNING: please remove/rename results directory:
+# '/home/contrera/codigo/cvs/get_homologues-est/sample_transcripts_fasta_est_homologues/'
+# if you change the sequences in your .fna/.faa files or want to re-run
+
+# re-using previous isoform clusters
+# Esterel.trinity.fna.bz2.nucl : 42 sequences
+# Franka.trinity.fna.bz2.nucl : 65 sequences
+# Hs_Turkey-19-24.trinity.fna.bz2.nucl : 61 sequences
+# flcdnas_Hnijo.fna.gz.nucl : 2379 sequences
+
+# creating indexes, this might take some time (lines=2.08e+05) ...
+
+# construct_taxa_indexes: number of taxa found = 4
+# number of file addresses/BLAST queries = 4.4e+04
+
+# genome composition report (samples=20,permutations=24,seed=0)
+# genomic composition parameters: MIN_PERSEQID_HOM=70 MIN_COVERAGE_HOM=50 SOFTCOREFRACTION=0.95 (set in lib/marfil_homology.pm)
+# genome order:
+# 0 Esterel.trinity.fna.bz2.nucl
+# 1 Franka.trinity.fna.bz2.nucl
+# 2 Hs_Turkey-19-24.trinity.fna.bz2.nucl
+# 3 flcdnas_Hnijo.fna.gz.nucl
+
+# find_OMCL_clusters: re-using previous results (same parameters)
+
+# find_OMCL_clusters: parsing clusters (/home/contrera/codigo/cvs/get_homologues-est/sample_transcripts_fasta_est_homologues/tmp/all_ortho.mcl)
+
+## sample 0 (Esterel.trinity.fna.bz2.nucl | 0,1,2,3,)
+# adding Esterel.trinity.fna.bz2.nucl: core=4665 pan=4665
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=496 pan=8937
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=84 pan=13004
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=66 pan=27019
+## sample 1 (Esterel.trinity.fna.bz2.nucl | 0,2,3,1,)
+# adding Esterel.trinity.fna.bz2.nucl: core=4665 pan=4665
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=432 pan=9002
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=308 pan=24283
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=66 pan=26209
+## sample 2 (Esterel.trinity.fna.bz2.nucl | 0,3,1,2,)
+# adding Esterel.trinity.fna.bz2.nucl: core=4665 pan=4665
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=2007 pan=21292
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=347 pan=23358
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=66 pan=25652
+## sample 3 (Esterel.trinity.fna.bz2.nucl | 0,1,3,2,)
+# adding Esterel.trinity.fna.bz2.nucl: core=4665 pan=4665
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=496 pan=8937
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=347 pan=24064
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=66 pan=26358
+## sample 4 (flcdnas_Hnijo.fna.gz.nucl | 3,2,1,0,)
+# adding flcdnas_Hnijo.fna.gz.nucl: core=20015 pan=20015
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=1761 pan=22564
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=293 pan=24641
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=66 pan=26482
+## sample 5 (flcdnas_Hnijo.fna.gz.nucl | 3,0,2,1,)
+# adding flcdnas_Hnijo.fna.gz.nucl: core=20015 pan=20015
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=2007 pan=22171
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=308 pan=24585
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=66 pan=26511
+## sample 6 (Esterel.trinity.fna.bz2.nucl | 0,3,2,1,)
+# adding Esterel.trinity.fna.bz2.nucl: core=4665 pan=4665
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=2007 pan=21292
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=308 pan=23706
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=66 pan=25632
+## sample 7 (Hs_Turkey-19-24.trinity.fna.bz2.nucl | 2,1,0,3,)
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=4838 pan=4838
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=417 pan=9096
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=84 pan=12959
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=66 pan=26974
+## sample 8 (flcdnas_Hnijo.fna.gz.nucl | 3,2,0,1,)
+# adding flcdnas_Hnijo.fna.gz.nucl: core=20015 pan=20015
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=1761 pan=22564
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=308 pan=24567
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=66 pan=26493
+## sample 9 (Hs_Turkey-19-24.trinity.fna.bz2.nucl | 2,1,3,0,)
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=4838 pan=4838
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=417 pan=9096
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=293 pan=24354
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=66 pan=26195
+## sample 10 (Franka.trinity.fna.bz2.nucl | 1,2,3,0,)
+# adding Franka.trinity.fna.bz2.nucl: core=4754 pan=4754
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=417 pan=9100
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=293 pan=24358
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=66 pan=26199
+## sample 11 (Franka.trinity.fna.bz2.nucl | 1,2,0,3,)
+# adding Franka.trinity.fna.bz2.nucl: core=4754 pan=4754
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=417 pan=9100
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=84 pan=12963
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=66 pan=26978
+## sample 12 (Franka.trinity.fna.bz2.nucl | 1,3,2,0,)
+# adding Franka.trinity.fna.bz2.nucl: core=4754 pan=4754
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=1996 pan=21362
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=293 pan=23775
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=66 pan=25616
+## sample 13 (Franka.trinity.fna.bz2.nucl | 1,0,3,2,)
+# adding Franka.trinity.fna.bz2.nucl: core=4754 pan=4754
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=496 pan=8955
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=347 pan=24082
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=66 pan=26376
+## sample 14 (Hs_Turkey-19-24.trinity.fna.bz2.nucl | 2,0,3,1,)
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=4838 pan=4838
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=432 pan=9114
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=308 pan=24395
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=66 pan=26321
+## sample 15 (Esterel.trinity.fna.bz2.nucl | 0,2,1,3,)
+# adding Esterel.trinity.fna.bz2.nucl: core=4665 pan=4665
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=432 pan=9002
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=84 pan=12930
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=66 pan=26945
+## sample 16 (Franka.trinity.fna.bz2.nucl | 1,0,2,3,)
+# adding Franka.trinity.fna.bz2.nucl: core=4754 pan=4754
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=496 pan=8955
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=84 pan=13022
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 3450 sequences 
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 3348 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=66 pan=27037
+## sample 17 (flcdnas_Hnijo.fna.gz.nucl | 3,0,1,2,)
+# adding flcdnas_Hnijo.fna.gz.nucl: core=20015 pan=20015
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=2007 pan=22171
+# finding homologs between Franka.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 637 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=347 pan=24237
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Esterel.trinity.fna.bz2.nucl (1)
+# 573 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=66 pan=26531
+## sample 18 (flcdnas_Hnijo.fna.gz.nucl | 3,1,2,0,)
+# adding flcdnas_Hnijo.fna.gz.nucl: core=20015 pan=20015
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=1996 pan=22249
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 588 sequences 
+# finding homologs between Hs_Turkey-19-24.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3230 sequences 
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=293 pan=24662
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=66 pan=26503
+## sample 19 (Hs_Turkey-19-24.trinity.fna.bz2.nucl | 2,3,1,0,)
+# adding Hs_Turkey-19-24.trinity.fna.bz2.nucl: core=4838 pan=4838
+# finding homologs between flcdnas_Hnijo.fna.gz.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 3068 sequences 
+# adding flcdnas_Hnijo.fna.gz.nucl: core=1761 pan=21649
+# finding homologs between Franka.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3442 sequences 
+# finding homologs between Franka.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 531 sequences 
+# adding Franka.trinity.fna.bz2.nucl: core=293 pan=23726
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Franka.trinity.fna.bz2.nucl (1)
+# 654 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and flcdnas_Hnijo.fna.gz.nucl (1)
+# 3439 sequences 
+# finding homologs between Esterel.trinity.fna.bz2.nucl and Hs_Turkey-19-24.trinity.fna.bz2.nucl (1)
+# 526 sequences 
+# adding Esterel.trinity.fna.bz2.nucl: core=66 pan=25567
+
+# pan-transcriptome (number of transcripts, can be plotted with plot_pancore_matrix.pl)
+# file=sample_transcripts_fasta_est_homologues/pan_genome_algOMCL.tab
+genomes	mean	stddev	|	samples
+0	8559	6614	|	4665	4665	4665	4665	20015	20015	4665	4838	20015	4838	4754	4754	4754	4754	4838	4665	4754	20015	20015	4838	
+1	14830	6425	|	8937	9002	21292	8937	22564	22171	21292	9096	22564	9096	9100	9100	21362	8955	9114	9002	8955	22171	22249	21649	
+2	21384	4866	|	13004	24283	23358	24064	24641	24585	23706	12959	24567	24354	24358	12963	23775	24082	24395	12930	13022	24237	24662	23726	
+3	26380	468	|	27019	26209	25652	26358	26482	26511	25632	26974	26493	26195	26199	26978	25616	26376	26321	26945	27037	26531	26503	25567	
+
+# core-transcriptome (number of transcripts, can be plotted with plot_pancore_matrix.pl)
+# file=sample_transcripts_fasta_est_homologues/core_genome_algOMCL.tab
+genomes	mean	stddev	|	samples
+0	8559	6614	|	4665	4665	4665	4665	20015	20015	4665	4838	20015	4838	4754	4754	4754	4754	4838	4665	4754	20015	20015	4838	
+1	1113	737	|	496	432	2007	496	1761	2007	2007	417	1761	417	417	417	1996	496	432	432	496	2007	1996	1761	
+2	255	101	|	84	308	347	347	293	308	308	84	308	293	293	84	293	347	308	84	84	347	293	293	
+3	66	0	|	66	66	66	66	66	66	66	66	66	66	66	66	66	66	66	66	66	66	66	66	
+
+# soft core-genome (number of genes, can be plotted with plot_pancore_matrix.pl)
+# file=sample_transcripts_fasta_est_homologues/soft-core_genome_algOMCL.tab
+genomes	mean	stddev	|	samples
+0	8559	6614	|	4665	4665	4665	4665	20015	20015	4665	4838	20015	4838	4754	4754	4754	4754	4838	4665	4754	20015	20015	4838	
+1	3491	2311	|	2428	2195	8108	2428	2195	2414	8108	2428	2195	2428	2195	2195	8108	2414	2414	2195	2414	2414	2428	8108	
+2	2170	1017	|	765	3460	2145	3656	2120	1885	1885	844	2131	3464	3464	844	1885	3656	3460	829	765	2145	1885	2120	
+3	645	101	|	816	592	553	553	607	592	592	816	592	607	607	816	607	553	592	816	816	553	607	607	
+
+# clustering orthologous sequences
+
+# looking for valid sequence clusters (n_of_taxa=4)...
+
+# number_of_clusters = 66
+# cluster_list = sample_transcripts_fasta_est_homologues/Esterel_alltaxa_algOMCL_e0_.cluster_list
+# cluster_directory = sample_transcripts_fasta_est_homologues/Esterel_alltaxa_algOMCL_e0_
+
+# average_nucleotide_identity_matrix_file = sample_transcripts_fasta_est_homologues/Esterel_alltaxa_algOMCL_e0_Avg_identity.tab
+
+# runtime: 12 wallclock secs ( 8.97 usr  0.38 sys +  2.98 cusr  0.16 csys = 12.49 CPU)
+# RAM use: 150.3 MB

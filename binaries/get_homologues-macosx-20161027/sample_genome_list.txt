@@ -1,0 +1,3 @@
+NC_010159                   Yersinia_pestis_Angola      # known accession
+GCA_000016445.1_ASM1644v1   Yersinia_pestis_Pestoides_F # complete genome
+AAYU01                      Yersinia_pestis_B42003004   # WGS genome, possibly a draft

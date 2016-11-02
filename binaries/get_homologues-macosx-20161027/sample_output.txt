@@ -1,0 +1,78 @@
+# ./get_homologues.pl -i 0 -d sample_buch_fasta -o 0 -e 0 -f 0 -r 0 -t all -c 0 -I 0 -m local -n 2 -M 0 -G 0 -P 0 -C 75 -S 1 -E 1e-05 -F 1.5 -N 0 -B 50 -s 0 -D 0 -g 0 -a '0' -x  -R 0
+
+# results_directory=/home/contrera/codigo/cvs/get_homologues/sample_buch_fasta_homologues
+# parameters: MAXEVALUEBLASTSEARCH=0.01 MAXPFAMSEQS=250
+
+# checking input files...
+# Buch_aph_APS.faa 574
+# Buch_aph_Bp.faa 507
+# Buch_aph_Cc.faa 357
+# Buch_aphid_Sg.faa 546
+
+# 4 genomes, 1984 sequences
+
+# taxa considered = 4 sequences = 1984 residues = 650959 MIN_BITSCORE_SIM = 17.2
+
+# estimated memory requirements: 190 Mb
+
+# mask=BuchaphCc_f0_alltaxa_algBDBH_e0_ (_algBDBH)
+
+# running makeblastdb with /home/contrera/codigo/cvs/get_homologues/sample_buch_fasta_homologues/Buch_aph_APS.faa.fasta
+
+# running makeblastdb with /home/contrera/codigo/cvs/get_homologues/sample_buch_fasta_homologues/Buch_aph_Bp.faa.fasta
+
+# running makeblastdb with /home/contrera/codigo/cvs/get_homologues/sample_buch_fasta_homologues/Buch_aph_Cc.faa.fasta
+
+# running makeblastdb with /home/contrera/codigo/cvs/get_homologues/sample_buch_fasta_homologues/Buch_aphid_Sg.faa.fasta
+
+# running BLAST searches ...
+# done
+
+# concatenating and sorting blast results...
+# sorting _Buch_aph_APS.faa results (0.12MB)
+# sorting _Buch_aph_Bp.faa results (0.11MB)
+# sorting _Buch_aph_Cc.faa results (0.084MB)
+# sorting _Buch_aphid_Sg.faa results (0.11MB)
+# done
+
+
+# parsing blast result! (/home/contrera/codigo/cvs/get_homologues/sample_buch_fasta_homologues/tmp/all.blast , 0.42MB)
+# parsing blast file finished
+
+# creating indexes, this might take some time (lines=9.30e+03) ...
+
+# construct_taxa_indexes: number of taxa found = 4
+# number of file addresses = 9.3e+03 number of BLAST queries  = 2.0e+03
+
+# clustering orthologous sequences
+
+# clustering inparalogues in Buch_aph_Cc.faa (reference)
+# 0 sequences
+
+# clustering inparalogues in Buch_aph_APS.faa
+# 1 sequences
+
+# finding BDBHs between Buch_aph_Cc.faa and Buch_aph_APS.faa
+# 324 sequences
+
+# clustering inparalogues in Buch_aph_Bp.faa
+# 0 sequences
+
+# finding BDBHs between Buch_aph_Cc.faa and Buch_aph_Bp.faa
+# 326 sequences
+
+# clustering inparalogues in Buch_aphid_Sg.faa
+# 0 sequences
+
+# finding BDBHs between Buch_aph_Cc.faa and Buch_aphid_Sg.faa
+# 317 sequences
+
+# looking for valid ORF clusters (n_of_taxa=4)...
+
+
+# number_of_clusters = 305
+# cluster_list = sample_buch_fasta_homologues/BuchaphCc_f0_alltaxa_algBDBH_e0_.cluster_list
+# cluster_directory = sample_buch_fasta_homologues/BuchaphCc_f0_alltaxa_algBDBH_e0_
+
+# runtime: 66 wallclock secs ( 0.76 usr  0.10 sys + 61.66 cusr  0.41 csys = 62.93 CPU)
+# RAM use: 73.7 MB
