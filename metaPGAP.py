@@ -234,9 +234,9 @@ def prokka(platform):
         ColorOutput(' Annotating genome with Prokka .....\n','IMP'))
 
     if platform.lower() == "darwin":
-        prokka_path=os.path.abspath("binaries/prokka/bin/")
+        prokka_path=os.path.abspath("binaries/prokka/darwin/bin/")
     elif platform.lower() == "linux":
-        prokka_path=os.path.abspath("binaries/prokka/bin/")
+        prokka_path=os.path.abspath("binaries/prokka/linux/bin/")
     
     data_path=os.path.abspath("data/data-master/")
     out_path=os.path.abspath("prokka_out/")
@@ -356,7 +356,7 @@ def mafft(platform):
     if platform.lower() == "darwin":
         mafft_path=os.path.abspath("binaries/mafft/darwin/")
     elif platform.lower() == "linux":
-        mafft_path=os.path.abspath("binaries/mafft/linux/")
+        mafft_path=os.path.abspath("binaries/mafft/linux/bin/")
 
     data_path=os.path.abspath("pan_genome/")
     out_path=os.path.abspath("phylogeny/")
@@ -404,16 +404,16 @@ def RaXML(platform):
         ColorOutput(' Phylogenetic analysis of core genome using RaXML .....\n','IMP'))
 
     if platform.lower() == "darwin":
-        RaXML_path=os.path.abspath("binaries/standard-RAxML-master/")
+        RaXML_path=os.path.abspath("binaries/standard-RAxML-master/darwin/")
     elif platform.lower() == "linux":
-        RaXML_path=os.path.abspath("binaries/standard-RAxML-master/")
+        RaXML_path=os.path.abspath("binaries/standard-RAxML-master/linux/")
 
     data_path=os.path.abspath("phylogeny/")
     out_path=os.path.abspath("phylogeny/")
         
     os.chdir(out_path)
     t0_time = time.time()
-    cmd="%s/raxmlHPC -m PROTGAMMABLOSUM62 -p 12345 -s %s/concatenated.out -n CORE -f a -x 12345 -N 100 -T 10" % (RaXML_path,data_path)
+    cmd="%s/raxmlHPC -m PROTGAMMABLOSUM62 -p 12345 -x 12345 -s %s/concatenated.out -n CORE -f a -N 50" % (RaXML_path,data_path)
     if os.system(cmd):exit()
     t1_time = time.time()
     print(t1_time - t0_time, "RaXML")
@@ -426,25 +426,27 @@ def nwTree(platform):
     
     # Message
     sys.stdout.write(strftime("%Y-%m-%d %H:%M:%S")+
-        ColorOutput(' Building phylogenetic tree using FastTree .....\n','IMP'))
+        ColorOutput(' Building phylogenetic tree using Newick tools .....\n','IMP'))
 
     if platform.lower() == "darwin":
         nwTree_path=os.path.abspath("binaries/nwTree/darwin/")
     elif platform.lower() == "linux":
-        neTree_path=os.path.abspath("binaries/nwTree/linux/")
+        neTree_path=os.path.abspath("binaries/nwTree/linux/bin/")
 
     data_path=os.path.abspath("phylogeny/")
     out_path=os.path.abspath("phylogeny/")
     
+    CORE_file="RAxML_bestTree.CORE"
     t0_time = time.time()
     for root, dirs, files in os.walk(data_path):
-        for file in files:
-            if file('RAxML_bestTree.CORE'):
-                fl = os.path.join(root, file)
-                fname=file.split('.')[0] 
-                cmd= '%s/nw_display -s %s > %s/%s.svg' % (nwTree_path,fl,out_path,fname)
-                #if os.system(cmd):exit()
-    
+        if CORE_file in files:
+            fl = os.path.join(root, CORE_file)
+            fname=CORE_file.split('.')[0] 
+            cmd= '%s/nw_display -s -S -b opacity:0 %s > %s/%s.svg' % (nwTree_path,fl,out_path,fname)
+            #pdf= 'inkscape -f %s/%s.svg -A %s.pdf'% (fname,out_path,fname)
+            if os.system(cmd):exit()
+            #if os.system(pdf):exit()
+      
     t1_time = time.time()
     print(t1_time - t0_time, "nwTree")
     
@@ -453,15 +455,24 @@ def nwTree(platform):
 sys.path += ["binaries/", "../", "../../", "../../../"]
 sys.path += ["data/", "../", "../../", "../../../"]
 
+#sys.path += "binaries/prokka/darwin/bin/"
+#sys.path += "binaries/prokka/darwin/bin/"
+#sys.path += "binaries/mafft/darwin/bin/"
+#sys.path += "binaries/mafft/linux/bin/"
+#sys.path += "binaries/standard-RAxML-master/darwin/"
+#sys.path += "binaries/standard-RAxML-master/linux/"
+#sys.path += "binaries/nwTree/darwin/"
+#sys.path += "binaries/nwTree/linux/bin/"
+
 run_path = os.path.abspath(os.curdir)
 metaPGAP_path = getmetaPGAPpath()
 os.chdir(metaPGAP_path)
 
 def main():
-    os.chdir(run_path)
+    os.chdir(metaPGAP_path)
     plat=platform.system()
     step = 1
-    
+
     if bExitForImportFailed:
         pass
     elif CheckRequirements():
